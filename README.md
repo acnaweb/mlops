@@ -71,8 +71,7 @@ Model creation must be
 - Optimize
 
 
-### MLOps Parts
-
+### MLOps Parts [CRISP-ML]
 
 <table>
 <tr>
@@ -127,7 +126,11 @@ Model creation must be
 </tr>
 </table>
 
+![CRISP-ML-FIGURE](https://ml-ops.org/img/crisp-ml-process.jpg)
+
+
 
 
 [Landscape]: https://ai-infrastructure.org/ai-infrastructure-landscape/
+[CRISP-ML]: https://ml-ops.org/content/crisp-ml
 
