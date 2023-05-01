@@ -129,8 +129,38 @@ Model creation must be
 ![CRISP-ML-FIGURE](https://ml-ops.org/img/crisp-ml-process.jpg)
 
 
+### MLOps Stages
+
+<table>
+<tr>
+    <th>Stage</th>
+    <th>Definition</th>    
+</tr>
+<tr>
+    <td>Stage 1</td>
+    <td>Model and Data <b>Version Control</b></td>
+</tr>
+<tr>
+    <td>Stage 2</td>
+    <td><b>AutoML</b> + Model and Data Version Control</td>    
+</tr>
+<tr>
+    <td>Stage 3</td>
+    <td>AutoML + Model and Data Version Control + <b>Model Serving</b></td>   
+</tr>
+<tr>
+    <td>Stage 4</td>
+       <td>AutoML + Model and Data Version Control + Model Serving + <b>Monitoring, Governance and Retraining</b></td>   
+</tr>
+</table>
 
 
-[Landscape]: https://ai-infrastructure.org/ai-infrastructure-landscape/
+
+## References
+
+- [Landscape AI Infrastructure]
+
+
+[Landscape AI Infrastructure]: https://ai-infrastructure.org/ai-infrastructure-landscape/
 [CRISP-ML]: https://ml-ops.org/content/crisp-ml
 
