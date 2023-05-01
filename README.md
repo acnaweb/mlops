@@ -2,16 +2,22 @@
 
 ## Machine Learning Operations
 
+Model creation must be
 
-#### Model creation
-
-- scalable
-- collaborative
-- reproduceble
+> - scalable
+> - collaborative
+> - reproduceble
 
 ### DataOps
 
 > Set of rules that ensure a high quality of data to train models
+
+
+### MLOps addresses to
+
+> - Versioning
+> - Model Tracking
+> - Feature Generation
 
 
 ### MLOps (ML + Dev + Ops)
@@ -64,7 +70,64 @@
 - Monitor
 - Optimize
 
-### References
+
+### MLOps Parts
+
+
+<table>
+<tr>
+    <th>Part</th>
+    <th>Objective</th>
+    <th>Software</th>
+</tr>
+<tr>
+    <td>Feature Store</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Data Versioning</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Metadata Store</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Model Versioning</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Model Registration</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Model Serving</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Model Monitoring</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Recycling of models</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>CI/CD</td>
+    <td></td>
+    <td></td>
+</tr>
+</table>
+
+
 
 [Landscape]: https://ai-infrastructure.org/ai-infrastructure-landscape/
 
