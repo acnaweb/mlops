@@ -128,7 +128,6 @@ Model creation must be
 
 ![CRISP-ML-FIGURE](https://ml-ops.org/img/crisp-ml-process.jpg)
 
-
 ### MLOps Stages
 
 <table>
@@ -150,16 +149,24 @@ Model creation must be
 </tr>
 <tr>
     <td>Stage 4</td>
-       <td>AutoML + Model and Data Version Control + Model Serving + <b>Monitoring, Governance and Retraining</b></td>   
+       <td>AutoML + Model and Data Version Control + Model Serving + <b>Monitoring, Governance and Retraining (Fig 2)</b></td>   
 </tr>
 </table>
 
 ![Continuous Training](https://ml-ops.org/img/model-decay-monitoring.jpg)
+<figcaption>Fig 2 - Continuous Training</figcaption>
 
+## Installing
+
+### Tools and Libraries
+
+- Libraries
+- Jupyter Notebook
+- Docker
 
 ### Tips
 
-#### Jupyter Notebook environment (conda)
+Jupyter Notebook environment (Conda)
 
 ```sh
     $ conda install -n [env] ipykernel
