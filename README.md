@@ -157,11 +157,28 @@ Model creation must be
 ![Continuous Training](https://ml-ops.org/img/model-decay-monitoring.jpg)
 
 
+### Tips
+
+#### Jupyter Notebook environment (conda)
+
+```sh
+    $ conda install -n [env] ipykernel
+    $ python -m ipykernel install --user --name [env] --display-name "Python (mlops)"
+```
+
+
+
+
 ## References
 
 - [Landscape AI Infrastructure]
+- [Jupyter Notebook Template]
 
 
 [Landscape AI Infrastructure]: https://ai-infrastructure.org/ai-infrastructure-landscape/
+
+[Jupyter Notebook Template]: https://github.com/acnaweb/notebook
+
 [CRISP-ML]: https://ml-ops.org/content/crisp-ml
+
 
