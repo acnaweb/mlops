@@ -154,6 +154,7 @@ Model creation must be
 </tr>
 </table>
 
+![Continuous Training](https://ml-ops.org/img/model-decay-monitoring.jpg)
 
 
 ## References
