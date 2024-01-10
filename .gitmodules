@@ -1,0 +1,3 @@
+[submodule "mlops_concepts"]
+	path = mlops_concepts
+	url = https://github.com/acnaweb/mlops_concepts
