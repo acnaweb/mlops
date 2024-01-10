@@ -1,3 +1,6 @@
 [submodule "mlops_concepts"]
 	path = mlops_concepts
 	url = https://github.com/acnaweb/mlops_concepts
+[submodule "mlops_bootcamp"]
+	path = mlops_bootcamp
+	url = https://github.com/acnaweb/mlops_bootcamp
