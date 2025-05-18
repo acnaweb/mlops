@@ -1,0 +1,19 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(DataScientist, "Cientista de Dados", "Desenvolve, testa e ajusta modelos.")
+Person(DevOps, "Engenheiro DevOps", "Orquestra e automatiza pipelines.")
+System(CD4MLPlatform, "Plataforma CD4ML", "Plataforma para CI/CD de modelos de ML")
+
+System_Ext(GitHub, "GitHub", "Repositório com código, dados e modelo")
+System_Ext(GCP, "Google Cloud", "Ambiente de execução (Vertex AI, Cloud Run)")
+System_Ext(Users, "Usuários finais", "Consumidores de APIs de predição")
+
+Rel(DataScientist, GitHub, "Versiona código, dados e modelos")
+Rel(DevOps, GitHub, "Gerencia CI/CD")
+Rel(DataScientist, CD4MLPlatform, "Interage com pipelines")
+Rel(DevOps, CD4MLPlatform, "Monitora e opera")
+Rel(CD4MLPlatform, GCP, "Executa pipelines e deploy")
+Rel(Users, GCP, "Consome API de inferência")
+
+@enduml

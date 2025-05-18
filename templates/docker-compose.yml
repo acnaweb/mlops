@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: cd4ml-app
+    volumes:
+      - .:/app
+    command: make train
+    depends_on:
+      - prometheus
+      - postgres
+
+  postgres:
+    image: postgres:14
+    container_name: cd4ml-db
+    environment:
+      POSTGRES_USER: ml_user
+      POSTGRES_PASSWORD: ml_pass
+      POSTGRES_DB: ml_data
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+
+volumes:
+  pgdata:
+
+  cron:
+    build: .
+    container_name: cd4ml-cron
+    volumes:
+      - .:/app
+    environment:
+      - S3_BUCKET=cd4ml-monitoring
+    entrypoint: >
+      /bin/sh -c "echo '* * * * * /app/monitoring/run_cron_monitor.sh >> /app/monitoring/cron.log 2>&1' | crontab - && cron -f"

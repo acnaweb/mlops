@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'cd4ml_app'
+    static_configs:
+      - targets: ['cd4ml-app:8000']

@@ -1,0 +1,25 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+System_Boundary(cd4ml, "Plataforma CD4ML") {
+
+  Container(WebRepo, "Repositório Git", "GitHub", "Armazena código, modelo e workflow CI/CD")
+  Container(CI, "CI/CD Pipeline", "GitHub Actions", "Executa testes, treino, validação e deploy")
+  Container(TrainScript, "Script de Treinamento", "Python", "Treina e salva modelos com scikit-learn")
+  Container(Tests, "Testes Automatizados", "Pytest", "Valida integridade e performance")
+  Container(ServingAPI, "Model Serving", "FastAPI + Docker", "Serve o modelo como API REST")
+  Container(Monitoring, "Monitoramento", "Prometheus + Grafana + Evidently", "Coleta métricas e detecta drift")
+
+}
+
+Person(MLDev, "Engenheiro ML / Cientista de Dados")
+System_Ext(CloudInfra, "GCP / Cloud Run", "Infraestrutura de deploy")
+
+Rel(MLDev, WebRepo, "Realiza push/pull")
+Rel(WebRepo, CI, "Dispara CI/CD")
+Rel(CI, TrainScript, "Executa script de treino")
+Rel(CI, Tests, "Executa testes")
+Rel(CI, ServingAPI, "Faz deploy do modelo")
+Rel(ServingAPI, Monitoring, "Exporta métricas")
+Rel(CloudInfra, ServingAPI, "Executa modelo via API")
+@enduml

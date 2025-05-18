@@ -1,191 +1,83 @@
-# MLOps 
+# 📦 Capacitação Profissional em CD4ML (Continuous Delivery for Machine Learning)
 
-## Machine Learning Operations
+Este repositório contém o material completo para capacitação prática e profissional em CD4ML: Continuous Delivery for Machine Learning.
 
-Model creation must be
+---
 
-> - scalable
-> - collaborative
-> - reproduceble
+## 📚 Módulos Didáticos
 
-### DataOps
+- [01 – Fundamentos de CD4ML](notebooks/01_fundamentos_cd4ml.ipynb)
+- [02 – Arquitetura de Referência](notebooks/02_arquitetura_referencia.ipynb)
+- [03 – Versionamento e Data Contracts](notebooks/03_versionamento_contracts.ipynb)
+- [04 – Testes em ML](notebooks/04_testes_ml.ipynb)
+- [05 – Orquestração e Pipelines](notebooks/05_orquestracao_pipelines.ipynb)
+- [06 – Deploy Contínuo de Modelos](notebooks/06_deploy_modelos.ipynb)
+- [07 – Monitoramento e Observabilidade](notebooks/07_monitoramento_observabilidade.ipynb)
+- [08 – Gerenciamento de Experimentos](notebooks/08_experimentos_rastreabilidade.ipynb)
+- [09 – Padrões de Projeto](notebooks/09_padroes_projeto.ipynb)
+- [10 – Projeto Final](notebooks/10_projeto_final.ipynb)
 
-> Set of rules that ensure a high quality of data to train models
+---
 
+## 🧪 Desafios Práticos
 
-### MLOps addresses to
+- [01 – Fundamentos de CD4ML](desafios/01_fundamentos.md)
 
-> - Versioning
-> - Model Tracking
-> - Feature Generation
+---
 
+## 🏗️ Templates
 
-### MLOps (ML + Dev + Ops)
+- [Estrutura de Projeto com CI/CD, testes e treino](templates/)
+ [train.py](templates/src/train.py)
+ [test_basic.py](templates/tests/test_basic.py)
+ [.github/workflows/cd4ml_ci.yml](templates/.github/workflows/cd4ml_ci.yml)
+ [requirements.txt](templates/requirements.txt)
+ [README.md](templates/README.md)
 
-- ML (Experiment)
-    - Data Acquisition
-    - Business Undertanding
-    - Initial Modeling
+---
 
-- Develop
-    - Modeling + Testing
-    - Continuous Integration
-    - Continuous Deployment
+## 🗂️ Diagramas C4
 
-- Operate
-    - Continuous Delivery
-    - Data Feedback Loop
-    - System + Model Monitoring    
-    - Continuous Training
+- [Diagrama de Contexto (C4)](docs/diagrams/c4_context_cd4ml.puml)
+- [Diagrama de Containers (C4)](docs/diagrams/c4_container_cd4ml.puml)
+- [Descrição dos Diagramas](docs/diagrams/README.md)
 
-### MLOps Process
+---
 
-#### Use Case Discorevy
+## 🚀 Requisitos
 
-- Business Understanding
-- Use Case Identification
-- Data Understanding
-- Feasibility Study
+- Python 3.10+
+- Git, DVC (opcional)
+- VSCode + Extensão PlantUML (opcional)
+- Docker, FastAPI (para serving)
+- Prometheus, Grafana, Evidently (para monitoramento)
 
-#### Data Engineering
+---
 
-- Data Preparation
+Capacitação estruturada com foco em aplicação no mercado e validação por meio de desafios práticos.
 
-#### ML Pipeline
+---
 
-- Learning Algorithms
-- Model Building/Training
-- Model Experimentation
-- Model Evaluation
-- Model Serving
+## 🧪 Testes Adicionais
 
-#### Production Deployment
+- `test_input_validation.py`: Garante que os arquivos CSV de entrada têm colunas e dados válidos.
 
-- Deploy
-- Automate
+## ⏰ Monitoramento Agendado
 
-#### Production Monitoring
+- **Interno (cron):** Container `cron` executa o monitoramento continuamente.
+- **Externo (GitHub Actions):** Workflow `scheduled_monitor.yml` roda a cada 15 minutos automaticamente.
 
-- Operate
-- Monitor
-- Optimize
+## ☁️ Armazenamento
 
+- Relatórios de drift são salvos como JSON e enviados para S3.
+ Bucket padrão: `cd4ml-monitoring`
+ Caminho: `drift_reports/drift_report.json`
 
-### MLOps Parts [CRISP-ML]
+## 📦 Comandos Úteis
 
-<table>
-<tr>
-    <th>Part</th>
-    <th>Objective</th>
-    <th>Software</th>
-</tr>
-<tr>
-    <td>Feature Store</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Data Versioning</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Metadata Store</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Model Versioning</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Model Registration</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Model Serving</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Model Monitoring</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>Recycling of models</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>CI/CD</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
-
-![CRISP-ML-FIGURE](https://ml-ops.org/img/crisp-ml-process.jpg)
-
-### MLOps Stages
-
-<table>
-<tr>
-    <th>Stage</th>
-    <th>Definition</th>    
-</tr>
-<tr>
-    <td>Stage 1</td>
-    <td>Model and Data <b>Version Control</b></td>
-</tr>
-<tr>
-    <td>Stage 2</td>
-    <td><b>AutoML</b> + Model and Data Version Control</td>    
-</tr>
-<tr>
-    <td>Stage 3</td>
-    <td>AutoML + Model and Data Version Control + <b>Model Serving</b></td>   
-</tr>
-<tr>
-    <td>Stage 4</td>
-       <td>AutoML + Model and Data Version Control + Model Serving + <b>Monitoring, Governance and Retraining (Fig 2)</b></td>   
-</tr>
-</table>
-
-![Continuous Training](https://ml-ops.org/img/model-decay-monitoring.jpg)
-<figcaption>Fig 2 - Continuous Training</figcaption>
-
-## Installing
-
-### Tools and Libraries
-
-- Libraries
-- Jupyter Notebook
-- Docker
-
-### Tips
-
-Jupyter Notebook environment (Conda)
-
-```sh
-    $ conda install -n [env] ipykernel
-    $ python -m ipykernel install --user --name [env] --display-name "Python (mlops)"
+```bash
+make install       # Instala dependências
+make train         # Treina modelo
+make test          # Executa testes
+make monitor       # Gera relatório Evidently + envia para S3
 ```
-
-
-
-
-## References
-
-- [Landscape AI Infrastructure]
-- [Jupyter Notebook Template]
-
-
-[Landscape AI Infrastructure]: https://ai-infrastructure.org/ai-infrastructure-landscape/
-
-[Jupyter Notebook Template]: https://github.com/acnaweb/notebook
-
-[CRISP-ML]: https://ml-ops.org/content/crisp-ml
-
-
